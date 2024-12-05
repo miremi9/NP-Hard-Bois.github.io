@@ -1,11 +1,24 @@
-class Ocean {
-    constructor(nbPoissons) {
-        this.nbPoissons = nbPoissons;
+import Poisson from './Poisson.js';
+
+export default class Ocean {
+    constructor(nbPoissons = 10) {
+        this.oceanElement = document.getElementById("ocean");
+
+        this.poissons = [];
+        for (let i = 0; i < nbPoissons; i++) {
+            const poisson = new Poisson(this.oceanElement);
+            poisson.element.onclick = () => poisson.handleClick();
+            this.poissons.push(poisson);
+        }
+
+        this.animate = this.animate.bind(this);
+        this.animate();
     }
 
-    getNbPoissons() {
-        return this.nbPoissons;
+    animate() {
+        this.poissons.forEach(poisson => poisson.move());
+        requestAnimationFrame(this.animate);
     }
 }
 
-export default Ocean;
+let ocean = new Ocean();
