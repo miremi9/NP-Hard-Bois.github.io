@@ -8,8 +8,9 @@ class Game
     {
         //update compteur poisson
         this.ecosysteme = new Ecosysteme()
-        this.ecosysteme.ajouterPoisson(Truite,2)
-        this.ocean = new Ocean()
+        this.ecosysteme.ajouterPoisson("truite",2)
+        this.ocean = new Ocean(10,this.ecosysteme)
+        this.predationTruite = 0.01
 
 
         
@@ -29,10 +30,10 @@ class Game
         this.ocean.update()
         const compteur = document.querySelector('.compteurPoisson');
         let nbPoisson = this.ecosysteme.getNbPoisson()
-        console.log(nbPoisson)
         compteur.textContent = "Nb Poisson = "+nbPoisson
         
     }
+
 }
 
 function sleep(ms) {
