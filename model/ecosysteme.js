@@ -61,7 +61,7 @@ class Ecosysteme {
         proid += nouveauxProid;
 
         // Affichage des résultats après une mise à jour
-        return [predateur,proid]
+        return [Math.round(predateur),Math.round(proid)]
     }
 
     getNbPoisson() {
