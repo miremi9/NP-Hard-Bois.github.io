@@ -54,3 +54,16 @@ export default class Poisson {
         this.resetProperties();
     }
 }
+class Truite extends Poisson{
+} 
+class Saumon extends Poisson{
+} 
+class Bar extends Poisson{
+} 
+class Thon extends Poisson{
+} 
+class PoissonRouge extends Poisson{
+} 
+
+
+export {Truite as "Truite", Poisson as "Poisson"}

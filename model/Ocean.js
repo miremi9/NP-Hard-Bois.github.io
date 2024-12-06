@@ -11,14 +11,11 @@ export default class Ocean {
             this.poissons.push(poisson);
         }
 
-        this.animate = this.animate.bind(this);
-        this.animate();
     }
-
-    animate() {
+    update()
+    {
         this.poissons.forEach(poisson => poisson.move());
-        requestAnimationFrame(this.animate);
     }
 }
 
-let ocean = new Ocean();
+export {Ocean as "Ocean"}
