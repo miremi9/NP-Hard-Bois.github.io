@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,13 +13,16 @@
             color: limegreen;
             font-family: "Comic Sans MS", cursive;
         }
+
         .navbar {
             background-color: red !important;
         }
+
         .navbar-brand {
             font-size: 2rem;
             animation: blink 0.5s infinite;
         }
+
         .navbar-logo {
             width: 50px;
             height: 50px;
@@ -26,115 +30,149 @@
             border-radius: 50%;
             margin-right: 10px;
         }
+
         @keyframes blink {
-            50% { color: yellow; }
+            50% {
+                color: yellow;
+            }
         }
+
         footer {
-            background: repeating-linear-gradient(
-                    45deg,
+            background: repeating-linear-gradient(45deg,
                     purple,
                     purple 10px,
                     orange 10px,
-                    orange 20px
-            );
+                    orange 20px);
             text-shadow: 2px 2px black;
         }
+
         .card img {
             filter: grayscale(100%);
         }
+
         .btn {
             font-size: 1.5rem;
             color: mediumspringgreen !important;
             background-color: transparent !important;
             border: 2px dotted pink !important;
         }
+
         .text-primary {
             font-size: 0.7rem;
             color: cyan !important;
         }
+
         .text-secondary {
             font-size: 7rem;
             color: cyan !important;
         }
     </style>
 </head>
+
 <body>
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark">
-    <div class="container">
-        <a class="navbar-brand d-flex align-items-center" href="#">
-            <img  src="img/fish%20shop.png" alt="Logo" class="navbar-logo">
-            🐟FishShop
-        </a>
-        <div class="collapse navbar-collapse">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="#">Accueil </a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Pourquoi cliquer ici ?</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">FAQ </a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Contact (fermé)</a></li>
-            </ul>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="img/fish%20shop.png" alt="Logo" class="navbar-logo">
+                🐟FishShop
+            </a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Accueil </a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Pourquoi cliquer ici ?</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">FAQ </a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact (fermé)</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-3">
+        <div class="d-flex justify-content-between">
+            <a href="#" id="flipPage">&lt; retourne</a>
+            <a href="../../view/Ocean.html">&lt; retourne pour de vrai</a>
+        </div>
+
+        <script>
+            document.getElementById('flipPage').addEventListener('click', function (event) {
+                event.preventDefault();
+                document.body.style.transition = 'transform 1s';
+                document.body.style.transform = 'rotateY(180deg)';
+            });
+        </script>
+    </div>
+
+    <!-- Bannière -->
+    <div class="container my-4">
+        <div class="p-5 text-center bg-dark text-warning rounded">
+            <h1 class="text-secondary">Bienvenue </h1>
+            <p class="lead">Découvre</p>
+            <a href="#shop" class="btn">Non, n'appuyez pas ici</a>
         </div>
     </div>
-</nav>
 
-<!-- Bannière -->
-<div class="container my-4">
-    <div class="p-5 text-center bg-dark text-warning rounded">
-        <h1 class = "text-secondary">Bienvenue </h1>
-        <p class="lead">Découvre</p>
-        <a href="#shop" class="btn">Non, n'appuyez pas ici</a>
-    </div>
-</div>
-
-<!-- Section Produits -->
-<div id="shop" class="container my-5">
-    <h2 class="text-center mb-4 navbar-brand">Nos produits</h2>
-    <div class="row g-4">
-        <div class="col-md-4">
-            <div class="card">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9Tr3kyX7R7cAsMbUB2IxBgmOBJTZEHexCJw&s" class="card-img-top" alt="Saumon ?">
-                <div class="card-body">
-                    <h5 class="card-title">Pêcheur </h5>
-                    <p class="card-text">On ne garantit pas son éxpérience.</p>
-                    <p class="btn">Prix  : 50 saumons + 10 truite </p>
-                    <br>
-                    <a href="#" class="text-primary fw-bold"> Ajouter au panier</a>
+    <!-- Section Produits -->
+    <div id="shop" class="container my-5">
+        <h2 class="text-center mb-4 navbar-brand">Nos produits</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9Tr3kyX7R7cAsMbUB2IxBgmOBJTZEHexCJw&s"
+                        class="card-img-top" alt="Saumon ?">
+                    <div class="card-body">
+                        <h5 class="card-title">Pêcheur </h5>
+                        <p class="card-text">On ne garantit pas son éxpérience.</p>
+                        <p class="btn">Prix : 50 saumons + 10 truite </p>
+                        <br>
+                        <a href="#" class="text-primary fw-bold"> Ajouter au panier</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="img/adam-the-bible.jpg" class="card-img-top" alt="Saumon ?">
+                    <div class="card-body">
+                        <h5 class="card-title">Pécheur </h5>
+                        <p class="card-text">Attention aux homonymes !</p>
+                        <p class="btn">Prix : culpabilité </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="img/bar.png" class="card-img-top" alt="Thon ?">
+                    <div class="card-body">
+                        <h5 class="card-title">Bar ou Bar de glace</h5>
+                        <p class="card-text">Peut contenir du plastique.</p>
+                        <p class="btn">Prix : ???</p>
+                        <br>
+                        <a href="#" class="text-primary fw-bold">Ajouter au panier</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="img/thon.png" class="card-img-top" alt="Bar ?">
+                    <div class="card-body">
+                        <h5 class="card-title">Thon</h5>
+                        <p class="card-text">Idéal pour les amateurs de surprise.</p>
+                        <p class="btn">Prix : Appelez-nous</p>
+                        <br>
+                        <a href="#" class="text-primary fw-bold">Ajouter au panier</a>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="card">
-                <img src="img/bar.png" class="card-img-top" alt="Thon ?">
-                <div class="card-body">
-                    <h5 class="card-title">Bar ou Bar de glace</h5>
-                    <p class="card-text">Peut contenir du plastique.</p>
-                    <p class="btn">Prix : ???</p>
-                    <br>
-                    <a href="#" class="text-primary fw-bold">Ajouter au panier</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card">
-                <img src="img/thon.png" class="card-img-top" alt="Bar ?">
-                <div class="card-body">
-                    <h5 class="card-title">Thon</h5>
-                    <p class="card-text">Idéal pour les amateurs de surprise.</p>
-                    <p class="btn">Prix : Appelez-nous</p>
-                    <br>
-                    <a href="#" class="text-primary fw-bold">Ajouter au panier</a>
-                </div>
-            </div>
-        </div>
     </div>
-</div>
 
-<!-- Footer -->
-<footer class="mt-5">
-    <p>© 2024 FishShop - Aucun droit réservé. | <a href="#" class="text-light">Mentions incompréhensibles</a></p>
-</footer>
+    <!-- Footer -->
+    <footer class="mt-5">
+        <p>© 2024 FishShop - Aucun droit réservé. | <a href="#" class="text-light">Mentions incompréhensibles</a></p>
+    </footer>
 
-<!-- Scripts Bootstrap -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Scripts Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
