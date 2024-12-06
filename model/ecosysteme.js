@@ -11,6 +11,7 @@ class Ecosysteme {
         this.dico.set('poissonRouge', new PoissonRouge(null));
 
         this.predationTruite = 0.01
+        this.lastUpdate = Date.now()
 
     }
 
@@ -24,30 +25,43 @@ class Ecosysteme {
     }
 
     update() {
-
+        if (Date.now()-this.lastUpdate<1000)
+        {
+            return 
+        }
+        this.lastUpdate = Date.now()
         for (const [key, value] of this.poissons.entries()) { // Use for...of
             this.poissons.set(key, value); // Use set to update Map
         }
-        //console.log(this.dico["truite"])
-        //this.predation(this.poissons["truite"],this.poissons["saumon"],this.dico["truite"].GetPredation(),this.dico["truite"].GetReproduction(),this.dico["saumon"].GetReproduction())
+
+        let [predateur, proid] = this.predation(this.poissons.get("truite"),this.poissons.get("saumon"),this.dico.get("truite").GetPredation(),this.dico.get("truite").GetReproduction(),this.dico.get("saumon").GetReproduction())
+        console.log(`Proid: ${Math.round(proid)}, Predateur: ${Math.round(predateur)}`);
+        this.poissons.set("truite",predateur)
+        this.poissons.set("saumon",proid)
     }
 
 
-    predation(predateur,proid,tauxPredation,reproduction)
+    predation(predateur,proid,tauxPredation,tauxReproductionPredateur,tauxReproductionProid)
     {
+        if (proid==0 || predateur == 0)
+        {
+            return [predateur,proid]
+        }
+
+        console.log(predateur,proid,tauxPredation,tauxReproductionPredateur,tauxReproductionProid)
         let predation = tauxPredation * predateur * proid;
 
         let pertesProid = Math.min(predation, proid);
         proid -= pertesProid;
 
-        let nouvellesPredateur = this.tauxReproductionPredateur * predateur;
+        let nouvellesPredateur = tauxReproductionPredateur * predateur;
         predateur += nouvellesPredateur;
 
-        let nouveauxProid = this.tauxReproductionProid * proid;
+        let nouveauxProid =tauxReproductionProid * proid;
         proid += nouveauxProid;
 
         // Affichage des résultats après une mise à jour
-        console.log(`Proid: ${Math.round(predateur)}, Predateur: ${Math.round(proid)}`);
+        return [predateur,proid]
     }
 
     getNbPoisson() {

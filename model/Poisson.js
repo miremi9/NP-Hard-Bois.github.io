@@ -43,13 +43,15 @@ export default class Poisson {
         this.element.style.width = `${this.size}px`;
         this.element.style.height = `${this.size}px`;
         this.element.style.backgroundImage = "url('images.jpeg')";
+        this.element.style.position = "absolute"
+        this.element.style.backgroundSize = "contain"; // ou "cover"
+        this.element.style.backgroundRepeat = "no-repeat";
         
 
         this.updatePosition();
     }
 
     updatePosition() {
-        console.log(this.x)
         this.element.style.left = `${this.x}px`;
         this.element.style.top = `${this.y}px`;
     }
