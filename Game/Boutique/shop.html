@@ -1,53 +1,140 @@
-<div class="shop">
-    <table>
-        <tr>
-          <th>Item 1</th>
-          <th>Item 2</th>
-          <th>Item 3</th>
-        </tr>
-        <tr>
-            <td>prix:</td>
-            <td>prix:</td>
-            <td>prix:</td>
-        </tr>
-        <tr>
-            <td>3 a</td>
-            <td>8 a</td>
-            <td>10 a</td>
-        </tr>
-        <tr>
-            <td>5 b</td>
-            <td>11 b</td>
-            <td>12 b</td>
-        </tr>
-        <tr>
-            <td>7 c</td>
-            <td>7 c</td>
-            <td>18 c</td>
-        </tr>
-        <tr>
-            <td>9 d</td>
-            <td>4 d</td>
-            <td>3 d</td>
-        </tr>
-        <tr>
-            <td>11 e</td>
-            <td>10 e</td>
-            <td>8 e</td>
-        </tr>
-        <tr>
-            <td><button onclick="acheterItem('Item1')">Acheter</button></td>
-            <td><button onclick="acheterItem('Item2')">Acheter</button></td>
-            <td><button onclick="acheterItem('Item3')">Acheter</button></td>
-        </tr>
-    </table>
-    <div class="stat">
-        <p>a : <span id="a">100</span></p>
-        <p>b : <span id="b">100</span></p>
-        <p>c : <span id="c">100</span></p>
-        <p>c : <span id="d">100</span></p>
-        <p>e : <span id="e">100</span></p>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FishShop - Perdu avec un logo ? 😵</title>
+    <!-- Lien CDN Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: black;
+            color: limegreen;
+            font-family: "Comic Sans MS", cursive;
+        }
+        .navbar {
+            background-color: red !important;
+        }
+        .navbar-brand {
+            font-size: 2rem;
+            animation: blink 0.5s infinite;
+        }
+        .navbar-logo {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        @keyframes blink {
+            50% { color: yellow; }
+        }
+        footer {
+            background: repeating-linear-gradient(
+                    45deg,
+                    purple,
+                    purple 10px,
+                    orange 10px,
+                    orange 20px
+            );
+            text-shadow: 2px 2px black;
+        }
+        .card img {
+            filter: grayscale(100%);
+        }
+        .btn {
+            font-size: 1.5rem;
+            color: mediumspringgreen !important;
+            background-color: transparent !important;
+            border: 2px dotted pink !important;
+        }
+        .text-primary {
+            font-size: 0.7rem;
+            color: cyan !important;
+        }
+        .text-secondary {
+            font-size: 7rem;
+            color: cyan !important;
+        }
+    </style>
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+            <img  src="img/fish%20shop.png" alt="Logo" class="navbar-logo">
+            🐟FishShop
+        </a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#">Accueil </a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Pourquoi cliquer ici ?</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">FAQ </a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Contact (fermé)</a></li>
+            </ul>
+        </div>
     </div>
-    <script src="shop.js">
-        
+</nav>
+
+<!-- Bannière -->
+<div class="container my-4">
+    <div class="p-5 text-center bg-dark text-warning rounded">
+        <h1 class = "text-secondary">Bienvenue </h1>
+        <p class="lead">Découvre</p>
+        <a href="#shop" class="btn">Non, n'appuyez pas ici</a>
+    </div>
 </div>
+
+<!-- Section Produits -->
+<div id="shop" class="container my-5">
+    <h2 class="text-center mb-4 navbar-brand">Nos produits</h2>
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9Tr3kyX7R7cAsMbUB2IxBgmOBJTZEHexCJw&s" class="card-img-top" alt="Saumon ?">
+                <div class="card-body">
+                    <h5 class="card-title">Pêcheur </h5>
+                    <p class="card-text">On ne garantit pas son éxpérience.</p>
+                    <p class="btn">Prix  : 50 saumons + 10 truite </p>
+                    <br>
+                    <a href="#" class="text-primary fw-bold"> Ajouter au panier</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="img/bar.png" class="card-img-top" alt="Thon ?">
+                <div class="card-body">
+                    <h5 class="card-title">Bar ou Bar de glace</h5>
+                    <p class="card-text">Peut contenir du plastique.</p>
+                    <p class="btn">Prix : ???</p>
+                    <br>
+                    <a href="#" class="text-primary fw-bold">Ajouter au panier</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="img/thon.png" class="card-img-top" alt="Bar ?">
+                <div class="card-body">
+                    <h5 class="card-title">Thon</h5>
+                    <p class="card-text">Idéal pour les amateurs de surprise.</p>
+                    <p class="btn">Prix : Appelez-nous</p>
+                    <br>
+                    <a href="#" class="text-primary fw-bold">Ajouter au panier</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="mt-5">
+    <p>© 2024 FishShop - Aucun droit réservé. | <a href="#" class="text-light">Mentions incompréhensibles</a></p>
+</footer>
+
+<!-- Scripts Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
