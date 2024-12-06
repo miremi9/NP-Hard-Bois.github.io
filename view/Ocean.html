@@ -10,8 +10,10 @@
 
 <body>
     <h1 class="compteurPoisson">Poisson</h1>
-    <img class="nuage1" src="../Game/Boutique/img/nuage.png" alt="Description de l'image" width="300" height="200">
-    <a class="lienBoutique" href="" data-toggle="modal" data-target="#shopModal">boutiqu !!!!!!!</a>
+    <img class="nuage1" src="../Game/Boutique/img/nuage.png" alt="Description de l'image" width="200" height="150">
+    <img class="nuage2" src="../Game/Boutique/img/nuage.png" alt="Description de l'image" width="200" height="150">
+    <img class="nuage3" src="../Game/Boutique/img/nuage.png" alt="Description de l'image" width="100" height="50">
+    <a class="lienBoutique" href="" data-toggle="modal" data-target="#shopModal">bouhtik !!!!!!!</a>
 
     <!-- Modal -->
     <div class="modal fade" id="shopModal" tabindex="-1" role="dialog" aria-labelledby="shopModalLabel"
@@ -37,10 +39,25 @@
     <style>
         .nuage1 {
             position: absolute;
-            top: 1px;
-            right: 50%;
+            top: 20px;
+            right: 70%;
+            z-index: 0;
         }
-        
+
+        .nuage2 {
+            position: absolute;
+            top: 10px;
+            right: 30%;
+            z-index: 0;
+        }
+
+        .nuage3 {
+            position: absolute;
+            top: 80px;
+            right: 10%;
+            z-index: 0;
+        }
+
         .compteurPoisson {
             position: absolute;
             top: 20px;
@@ -51,6 +68,7 @@
             /* Optionnel : Taille du texte */
             color: black;
             /* Optionnel : Couleur du texte */
+            z-index: 1;
         }
 
         .lienBoutique {
@@ -59,6 +77,7 @@
             right: 20px;
             font-size: 24px;
             color: black;
+            z-index: 1;
         }
 
     </style>
