@@ -91,14 +91,19 @@
     <div class="container my-3">
         <div class="d-flex justify-content-between">
             <a class="bigtext" href="#" id="flipPage"><big>&lt; retourner</big></a>
-            <a href="../../view/Ocean.html"><small>&lt; retour</small></a>
         </div>
 
         <script>
+            let flipped = false;
             document.getElementById('flipPage').addEventListener('click', function (event) {
                 event.preventDefault();
                 document.body.style.transition = 'transform 1s';
-                document.body.style.transform = 'rotateY(180deg)';
+                if (!flipped) {
+                    document.body.style.transform = 'rotateY(180deg)';
+                } else {
+                    document.body.style.transform = 'rotateY(0deg)';
+                }
+                flipped = !flipped;
             });
         </script>
     </div>

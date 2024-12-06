@@ -1,36 +1,29 @@
 export default class Poisson {
-    constructor(parentElement,ocean) {
+    constructor(parentElement, ocean) {
         // creation element html pour cercle
         this.element = document.createElement('div');
         this.element.Nom = 'fish';
         this.reproduction = 0.1
         this.predation = 0
         this.ocean = ocean
-        if (parentElement != null)
-        {
+        if (parentElement != null) {
             parentElement.appendChild(this.element);
             this.resetProperties();
         }
-
-        
-
-        
     }
-    GetPredation()
-    {
+
+    GetPredation() {
         return this.predation
     }
-    GetReproduction()
-    {
+
+    GetReproduction() {
         return this.reproduction
     }
 
     resetProperties() {
         // position initiale
-        
         const parentHeight = this.element.parentElement.clientHeight;
         const parentWidth = this.element.parentElement.clientWidth;
-
         this.x = Math.random() * (parentWidth - 50);
         this.y = Math.random() * (parentHeight - 50);
 
@@ -39,14 +32,13 @@ export default class Poisson {
         this.speedY = (Math.random() - 0.5) * 5;
 
         // taille
-        this.size = Math.random() * 30 + 20; // entre 20 et 50px
+        this.size = Math.random() * 80 + 50; // entre 20 et 50px
         this.element.style.width = `${this.size}px`;
         this.element.style.height = `${this.size}px`;
         this.element.style.backgroundImage = "url('images.jpeg')";
         this.element.style.position = "absolute"
-        this.element.style.backgroundSize = "contain"; // ou "cover"
+        this.element.style.backgroundSize = "contain";
         this.element.style.backgroundRepeat = "no-repeat";
-        
 
         this.updatePosition();
     }
@@ -77,54 +69,52 @@ export default class Poisson {
 
     }
 }
-class Truite extends Poisson{
-    constructor(parentElement,ocean)
-    {
-        super(parentElement,ocean)
+
+class Truite extends Poisson {
+    constructor(parentElement, ocean) {
+        super(parentElement, ocean)
         this.Nom = "truite"
         this.predation = 0.01
     }
-    
-    resetProperties()
-    {
+
+    resetProperties() {
         super.resetProperties()
-        this.element.style.backgroundImage = "url('truite.png')";
+        this.element.style.backgroundImage = "url('fish/truite.png')";
     }
 
-} 
-class Saumon extends Poisson{
-    constructor(parentElement,ocean)
-    {
-        super(parentElement,ocean)
+}
+
+class Saumon extends Poisson {
+    constructor(parentElement, ocean) {
+        super(parentElement, ocean)
         this.Nom = "saumon"
     }
-    resetProperties()
-    {
+    resetProperties() {
         super.resetProperties()
-        this.element.style.backgroundImage = "url('saumon.jpeg')";
+        this.element.style.backgroundImage = "url('fish/saumon.png')";
     }
-} 
-class Bar extends Poisson{
-    constructor(parentElement,ocean)
-    {
-        super(parentElement,ocean)
+}
+
+class Bar extends Poisson {
+    constructor(parentElement, ocean) {
+        super(parentElement, ocean)
         this.Nom = "bar"
     }
-} 
-class Thon extends Poisson{
-    constructor(parentElement,ocean)
-    {
-        super(parentElement,ocean)
+}
+
+class Thon extends Poisson {
+    constructor(parentElement, ocean) {
+        super(parentElement, ocean)
         this.Nom = "thon"
     }
-} 
-class PoissonRouge extends Poisson{
-    constructor(parentElement,ocean)
-    {
-        super(parentElement,ocean)
+}
+
+class PoissonRouge extends Poisson {
+    constructor(parentElement, ocean) {
+        super(parentElement, ocean)
         this.Nom = "poissonRouge"
     }
-} 
+}
 
 
 export { Truite, Saumon, Bar, Thon, PoissonRouge, Poisson };
