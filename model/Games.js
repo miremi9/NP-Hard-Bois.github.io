@@ -1,6 +1,6 @@
 import { Ecosysteme } from "./ecosysteme.js";
 import { Ocean} from "./Ocean.js";
-import {Truite,Poisson} from "./Poisson.js";
+import { Shop } from "../Game/Boutique/shop.js";
 
 class Game
 {
@@ -11,6 +11,7 @@ class Game
         this.ecosysteme.ajouterPoisson("truite",2)
         this.ocean = new Ocean(10,this.ecosysteme)
         this.predationTruite = 0.01
+        this.Shop = new Shop()
 
 
         
@@ -41,4 +42,6 @@ function sleep(ms) {
 }
 
 let game = new Game()
+
+
 game.startGame()

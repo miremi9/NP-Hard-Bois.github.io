@@ -10,90 +10,17 @@
 
 <body>
     <h1 class="compteurPoisson">Poisson</h1>
-    <img class="nuage1" src="../Game/Boutique/img/nuage.png" alt="Description de l'image" width="200" height="150">
-    <img class="nuage2" src="../Game/Boutique/img/nuage.png" alt="Description de l'image" width="200" height="150">
-    <img class="nuage3" src="../Game/Boutique/img/nuage.png" alt="Description de l'image" width="100" height="50">
-    <a class="lienBoutique" href="" data-toggle="modal" data-target="#shopModal">bouhtik !!!!!!!</a>
-
-    <!-- Modal -->
-    <div class="modal fade" id="shopModal" tabindex="-1" role="dialog" aria-labelledby="shopModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="shopModalLabel">Shop</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <iframe src="../Game/Boutique/shop.html" width="200%" height="4000px" frameborder="0"></iframe>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <style>
-        .nuage1 {
-            position: absolute;
-            top: 20px;
-            right: 70%;
-            z-index: 0;
-        }
-
-        .nuage2 {
-            position: absolute;
-            top: 10px;
-            right: 30%;
-            z-index: 0;
-        }
-
-        .nuage3 {
-            position: absolute;
-            top: 80px;
-            right: 10%;
-            z-index: 0;
-        }
-
-        .compteurPoisson {
-            position: absolute;
-            top: 20px;
-            /* Position verticale */
-            left: 20px;
-            /* Position horizontale */
-            font-size: 24px;
-            /* Optionnel : Taille du texte */
-            color: black;
-            /* Optionnel : Couleur du texte */
-            z-index: 1;
-        }
-
-        .lienBoutique {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 24px;
-            color: black;
-            z-index: 1;
-        }
-
-    </style>
-    <div class="atmosphere">
-
-    </div>
-    <div class="ocean" id="ocean">
-
-    </div>
+    <style src="ocean.css">    </style>
+    <div class="atmosphere"></div>
+    <div class="boutique" id="boutique"></div>
+    <div class="ocean" id="ocean"></div>
+    
 
 
     <script src="../model/Games.js" type="module"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>

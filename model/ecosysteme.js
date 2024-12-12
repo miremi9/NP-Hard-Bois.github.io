@@ -41,27 +41,27 @@ class Ecosysteme {
     }
 
 
-    predation(predateur,proid,tauxPredation,tauxReproductionPredateur,tauxReproductionProid)
+    predation(predateur,proie,tauxPredation,tauxReproductionPredateur,tauxReproductionProid)
     {
-        if (proid==0 || predateur == 0)
+        if (proie==0 || predateur == 0)
         {
-            return [predateur,proid]
+            return [predateur,proie]
         }
 
-        console.log(predateur,proid,tauxPredation,tauxReproductionPredateur,tauxReproductionProid)
-        let predation = tauxPredation * predateur * proid;
+        console.log(predateur,proie,tauxPredation,tauxReproductionPredateur,tauxReproductionProid)
+        let predation = tauxPredation * predateur * proie;
 
-        let pertesProid = Math.min(predation, proid);
-        proid -= pertesProid;
+        let pertesProid = Math.min(predation, proie);
+        proie -= pertesProid;
 
         let nouvellesPredateur = tauxReproductionPredateur * predateur;
         predateur += nouvellesPredateur;
 
-        let nouveauxProid =tauxReproductionProid * proid;
-        proid += nouveauxProid;
+        let nouveauxProid =tauxReproductionProid * proie;
+        proie += nouveauxProid;
 
         // Affichage des résultats après une mise à jour
-        return [Math.round(predateur),Math.round(proid)]
+        return [Math.round(predateur),Math.round(proie)]
     }
 
     getNbPoisson() {

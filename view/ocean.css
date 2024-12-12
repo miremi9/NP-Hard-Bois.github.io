@@ -12,7 +12,7 @@ body {
     margin: 0;
     padding: 0;
     height: 80vh;
-    width: 100vw;
+    width: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -55,4 +55,18 @@ body {
 .fish:hover {
     transform: scale(1.2);
     /* Agrandissement lors du survol */
+}
+
+.boutique {
+    position: absolute; /* Ou relative selon le contexte */
+    top: 0; /* Optionnel : ajustez si nécessaire */
+    bottom: 0;
+    right: 0;
+    width: 20%; /* 20% de la largeur de l'écran */
+    height: 100%; /* Optionnel : ajustez pour la hauteur */
+    background-color: rgb(64, 164, 194); /* Couleur pour mieux visualiser */
+  }
+.compteurPoisson
+{
+    position: absolute;
 }

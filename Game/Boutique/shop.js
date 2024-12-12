@@ -1,46 +1,51 @@
-let a = 100; b = 100; c = 100; d = 100; e = 100;
-const A = {
-   Item1: 3,
-   Item2: 8,
-   Item3: 10,
-};
-const B = {
-   Item1: 5,
-   Item2: 11,
-   Item3: 12,
-};
-const C = {
-    Item1: 7,
-    Item2: 7,
-    Item3: 18,
- };
- const D = {
-    Item1: 9,
-    Item2: 4,
-    Item3: 3,
- };
- const E = {
-    Item1: 11,
-    Item2: 10,
-    Item3: 8,
- };
 
-function afficherCreature() {
-document.getElementById("a").textContent = a;
-document.getElementById("b").textContent = b;
-document.getElementById("c").textContent = c;
-document.getElementById("d").textContent = d;
-document.getElementById("e").textContent = e;
-}
+class Shop{
+    constructor(parentElement,Ocean)
+    {
+        this.prixSaumon = 10
+        this.parentElement = parentElement
+        console.log(parentElement)
+        //parentElement.getElementById("achatSaumon").addEventListener("click",this.achatSaumonMax)
+        document.getElementById('boutique').innerHTML = "<h1>Boutique</h1>"
+        this.createTable(10, 2);
 
-function acheterItem(item){
-    if (a >= A[item] && b >= B[item] && c>= C[item] && d >= D[item] && e>= E[item]) {
-        a -= A[item];
-        b -= B[item];
-        c -= C[item];
-        d -= D[item];
-        e -= E[item];
-    } 
-    afficherCreature();
+    }
+    achatSaumonMax()
+    {
+        console.log("Click achat")
+        this.Ocean.AddSaumon()
+
+
+    }
+    // Fonction pour générer une table dynamiquement
+    createTable(rows, cols) {
+    // Crée l'élément table
+    const table = document.createElement('table');
+    table.style.borderCollapse = 'collapse'; // Style : évite les doubles bordures
+    
+    // Boucle pour créer les lignes
+    for (let i = 0; i < rows; i++) {
+      const row = document.createElement('tr'); // Crée une ligne
+      
+      // Boucle pour créer les colonnes dans une ligne
+      for (let j = 0; j < cols; j++) {
+        const cell = document.createElement(i === 0 ? 'th' : 'td'); // Tête ou cellule normale
+        cell.textContent = i === 0 ? `Header ${j + 1}` : `Row ${i} Col ${j + 1}`;
+        cell.style.border = '1px solid black'; // Style des bordures
+        cell.style.padding = '8px'; // Style du padding
+        row.appendChild(cell); // Ajoute la cellule à la ligne
+      }
+      
+      table.appendChild(row); // Ajoute la ligne à la table
+    }
+  
+    // Ajoute la table au conteneur existant
+    const container = document.getElementById('boutique');
+    container.appendChild(table);
+  }
+  
+  // Appel de la fonction pour générer une table 4x5
+
+  
 }
-afficherCreature();
+export {Shop}
